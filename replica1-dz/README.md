@@ -136,13 +136,4 @@ Master-Master (PostgreSQL)
 ![Задание 2. Скриншот 4](screenshots/scr2_5.png)    
 ![Задание 2. Скриншот 4](screenshots/scr2_6.png)    
 
-### Задание 3*
-
-1) 
-
-Скриншоты.  
-![Задание 3. Скриншот 1](screenshots/scr3_1.png)  
-![Задание 3. Скриншот 2](screenshots/scr3_2.png)
-![Задание 3. Скриншот 3](screenshots/scr3_3.png)
-![Задание 3. Скриншот 4](screenshots/scr3_4.png)    
 
