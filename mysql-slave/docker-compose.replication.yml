@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  mysql-slave:
+    image: mysql:8.0
+    container_name: mysql_slave
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_USER: sys_temp
+      MYSQL_PASSWORD: password123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_slave_data:/var/lib/mysql
+      - ./slave.cnf:/etc/mysql/conf.d/slave.cnf:ro
+    networks:
+      - mysql_net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOSTS: mysql_dev, mysql_slave:3306
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    depends_on:
+      - mysql-slave
+    networks:
+      - mysql_net
+
+volumes:
+  mysql_slave_data:
+
+networks:
+  mysql_net:
+    name: mysql_replication_net
+    external: true

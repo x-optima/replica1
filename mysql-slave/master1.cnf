@@ -1,0 +1,7 @@
+[mysqld]
+server-id=1
+log-bin=mysql-bin
+binlog-format=ROW
+auto-increment-increment=2
+auto-increment-offset=1
+bind-address=0.0.0.0
